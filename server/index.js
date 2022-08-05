@@ -5,10 +5,10 @@ const mysql = require("mysql2");
 const cors = require("cors");
 
 const db = mysql.createPool({
-	host: "localhost",
-	user: "root",
-	password: "",
-	database: "football",
+	host: "mysql-akakpo.alwaysdata.net",
+	user: "akakpo",
+	password: "Dorothee@2210",
+	database: "akakpo_ftf",
 
 
 });

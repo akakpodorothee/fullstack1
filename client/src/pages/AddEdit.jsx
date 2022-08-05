@@ -23,7 +23,7 @@ const AddEdit = () =>{
 	const {id} = useParams();
 
 	useEffect(()=>{
-		axios.get(`http://localhost:5000/api/get/${id}`).then((resp)=> setState({...resp.data[0]}));
+		axios.get(`https://limitless-badlands-62670.herokuapp.com/api/get/${id}`).then((resp)=> setState({...resp.data[0]}));
 	},[id]);
 
 	const handleSubmit = (e) =>{
@@ -34,7 +34,7 @@ const AddEdit = () =>{
 		} else {
 		 if(!id){
 			axios
-				.post("http://localhost:5000/api/post", {
+				.post("https://limitless-badlands-62670.herokuapp.com/api/post", {
 					name,
 					lastname,
 					nickname,
@@ -45,7 +45,7 @@ const AddEdit = () =>{
 			})
 			.then(()=>{
 				setState({name: "", lastname: "", nickname: "", age: "", contacts: "", wins: "", losses: ""});
-				window.location('http://localhost:5000/')
+				window.location('https://limitless-badlands-62670.herokuapp.com/')
 			}).catch((err)=> toast.error(err.response.data));
 			// nav(, { replace: true })
 			
@@ -53,7 +53,7 @@ const AddEdit = () =>{
 			toast.success("Player added successfully");
 		 } else {
 			axios
-				.put(`http://localhost:5000/api/update/${id}`, {
+				.put(`https://limitless-badlands-62670.herokuapp.com/api/update/${id}`, {
 					name,
 					lastname,
 					nickname,

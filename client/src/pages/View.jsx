@@ -8,7 +8,7 @@ const View = () =>{
     const {id}= useParams();
 
     useEffect(()=>{
-		axios.get(`http://localhost:5000/api/get/${id}`).then((resp)=> setUser({...resp.data[0]}));
+		axios.get(`https://limitless-badlands-62670.herokuapp.com/api/get/${id}`).then((resp)=> setUser({...resp.data[0]}));
 	},[id]);
     return (
 
